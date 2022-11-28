@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Threads/Semaphore.iml" filepath="$PROJECT_DIR$/Threads/Semaphore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Advanced_IT.iml" filepath="$PROJECT_DIR$/Advanced_IT.iml" />
     </modules>
   </component>
 </project>

@@ -1,3 +1,5 @@
+package Aufgabe_9;
+
 public class WorkerThreads extends Thread{
     private BigArray bigArray;
 
@@ -10,11 +12,11 @@ public class WorkerThreads extends Thread{
             currentThread.start();
 
             //With this join the individual time is significantly smaller
-            try {
-                currentThread.join();
-            } catch (Exception e) {
-
-            }
+//            try {
+//                currentThread.join();
+//            } catch (Exception e) {
+//
+//            }
 
         }
         setBigArray(bigArray);

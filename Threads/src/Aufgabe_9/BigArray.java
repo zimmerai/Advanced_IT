@@ -1,3 +1,5 @@
+package Aufgabe_9;
+
 public class BigArray {
     private int arrayLength;
     private double[] bigArray;
