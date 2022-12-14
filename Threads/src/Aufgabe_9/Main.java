@@ -1,3 +1,5 @@
+package Aufgabe_9;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("With Big Array");
@@ -5,6 +7,6 @@ public class Main {
         bigArray.getSum();
 
         System.out.println("With Threads");
-        WorkerThreads workers = new WorkerThreads(1000,bigArray);
+        WorkerThreads workers = new WorkerThreads(128,bigArray);
     }
 }

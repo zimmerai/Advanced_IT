@@ -1,3 +1,5 @@
+package Aufgabe_9;
+
 public class WorkerThread extends Thread{
         private int idNum;
         private BigArray bigArray;
