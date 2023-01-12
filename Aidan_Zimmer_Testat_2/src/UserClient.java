@@ -13,12 +13,13 @@ public class UserClient {
         PrintWriter networkOut = null;
 
         try {
-            //Tastatureingabe und Client starten
+            //Tastatureingabe
             BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Verbunden! (Port: " + clientPort + ")" + " - Beenden sie den Client mit \"END\"");
-            s = new Socket(host, clientPort);
+            System.out.println("Gestartet! (Port: " + clientPort + ")" + " - Beenden sie den Client mit \"END\"");
             String input;
             while (true) {
+                //Client starten
+                s = new Socket(host, clientPort);
                 input = userIn.readLine();
                 //aufhören bei END
                 if(input.equals("END")){

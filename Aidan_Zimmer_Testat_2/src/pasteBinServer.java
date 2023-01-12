@@ -25,7 +25,6 @@ public class pasteBinServer {
             try (Socket s = server.accept();
                  BufferedReader networkIn = new BufferedReader(new InputStreamReader(s.getInputStream()));
                  PrintWriter networkOut = new PrintWriter(s.getOutputStream());){
-
                 inputMsg = networkIn.readLine();
                 //Wenn ein Input erkannt wird, ermittle die Antwort gemäß der Nachricht
                 if(inputMsg != null){
