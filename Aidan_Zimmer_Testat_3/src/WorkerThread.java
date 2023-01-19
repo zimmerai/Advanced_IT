@@ -40,8 +40,13 @@ public class WorkerThread extends Thread {
                 answer = file.read(this.lineNr, this.id);
                 this.command = "";
             } else if (this.command.equals("WRITE")) {
-                answer = file.write(this.lineNr, this.data, this.id);
-                this.command = "";
+                System.out.println(this.data);
+                if (this.data.equals("")){
+                    answer = "No data was given";
+                } else {
+                    answer = file.write(this.lineNr, this.data, this.id);
+                    this.command = "";
+                }
             } else {
                 answer = "something went wrong";
                 this.command = "";
