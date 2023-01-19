@@ -22,8 +22,7 @@ public class MyFile {
 			for (int i = 0; (i<lineNo) && (s != null); i++){
 				s = f.readLine();
 			}
-			this.endRead();
-			System.out.println("Der Thread" + id + " ist fertig.");
+			this.endRead(id);
 			if (s != null)
 				answer = "The file read: " + s;
 			else
@@ -59,8 +58,7 @@ public class MyFile {
 					outFile.println(s);
 				}
 			}//for
-			this.endWrite();
-			System.out.println("Der Thread" + id + " ist fertig.");
+			this.endWrite(id);
 		} catch(Exception e){ e.printStackTrace(); }
 		if (inFile != null){
 			try{ inFile.close(); } catch(Exception e){e.printStackTrace();}
@@ -98,8 +96,9 @@ public class MyFile {
 	}
 
 	//Austrittsprotokoll für K.A lesen
-	public synchronized void endRead() {
+	public synchronized void endRead(int id) {
 		this.activeReader=false;
+		System.out.println("Der Thread" + id + " ist fertig.");
 		notifyAll();
 	}
 
@@ -109,7 +108,7 @@ public class MyFile {
 		this.writerCount++;
 
 		//wenn es bereits einen aktiven Schreiber gibt, oder gelesen wird warte
-		while (this.activeReader || this.activeWriter){
+		while (this.activeReader | this.activeWriter){
 			System.out.println("Der Thread" + id + " wartet.");
 			wait();
 		}
@@ -118,9 +117,10 @@ public class MyFile {
 	}
 
 	//Austrittsprotokoll für K.A schreiben
-	public synchronized void endWrite(){
+	public synchronized void endWrite(int id){
 		this.activeWriter = false;
 		this.writerCount--;
+		System.out.println("Der Thread" + id + " ist fertig.");
 		notifyAll();
 	}
 }//class
