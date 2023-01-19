@@ -24,7 +24,7 @@ public class ServerThread extends Thread {
         this.command = commmand;
         this.fileName = arguments[0];
         this.lineNr = Integer.parseInt(arguments[1]);
-        if (arguments.length > 3) {
+        if (arguments.length >= 3) {
             this.data = arguments[2];
         }
         MyFile file = new MyFile(PATH + fileName + ".txt");
